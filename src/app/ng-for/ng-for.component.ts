@@ -33,7 +33,23 @@ export class NgForComponent implements OnInit {
     },
   ];
 
+  users: any = [];
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  onAddUser(uname: any) {
+    this.users.push({
+      name: uname.value,
+    });
+  }
+
+  onRemoveUser() {
+    this.users.splice(this.users.length - 1);
+  }
+
+  onRemoveItem(item: any) {
+    this.users.splice(item, 1);
+  }
 }

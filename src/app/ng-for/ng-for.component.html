@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-8">
       <table class="table">
         <thead class="table-dark">
@@ -20,6 +20,50 @@
             <td>{{ product.proName }}</td>
             <td>{{ product.proID }}</td>
             <td>{{ product.proPrice }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> -->
+
+  <!-- How to Add Users in a table  -->
+  <div class="row">
+    <div class="col-md-3">
+      <input type="text" class="form-control" placeholder="User Name" #uname />
+    </div>
+
+    <div class="col-md-3">
+      <button class="btn btn-success" (click)="onAddUser(uname)">
+        Create User
+      </button>
+    </div>
+
+    <div class="col-md-3">
+      <button class="btn btn-danger" (click)="onRemoveUser()">
+        Remove User
+      </button>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-">
+      <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th>User Name</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; index as i">
+            <td>{{ user.name }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="onRemoveItem(i)">
+                Remove Item
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
