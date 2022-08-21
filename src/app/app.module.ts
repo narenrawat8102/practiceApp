@@ -1,22 +1,75 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SwitchCaseComponent } from './switch-case/switch-case.component';
+
+// Components
+import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
 import { NgForComponent } from './ng-for/ng-for.component';
+import { SwitchCaseComponent } from './switch-case/switch-case.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+// Pages Components
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { ContactComponent } from './pages/contact/contact.component';
+
+// Products Components
+import { LaptopComponent } from './pages/products/laptop/laptop.component';
+import { WashingMachineComponent } from './pages/products/washing-machine/washing-machine.component';
+import { TelevisionComponent } from './pages/products/television/television.component';
+import { MobileComponent } from './pages/products/mobile/mobile.component';
+
+// Routing
+const appRoutes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'about', component: AboutComponent },
+  // Nested Routing of Products Page
+  {
+    path: 'products',
+    children: [
+      { path: '', component: ProductsComponent },
+      { path: 'laptop', component: LaptopComponent },
+      { path: 'mobile', component: MobileComponent },
+      { path: 'television', component: TelevisionComponent },
+      { path: 'washing-machine', component: WashingMachineComponent },
+    ],
+  },
+  { path: 'contact', component: ContactComponent },
+  { path: '**', component: PageNotFoundComponent },
+];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SwitchCaseComponent, NgForComponent],
+  declarations: [
+    AppComponent,
+    SwitchCaseComponent,
+    NgForComponent,
+    HomeComponent,
+    AboutComponent,
+    ProductsComponent,
+    ContactComponent,
+    LoginComponent,
+    PageNotFoundComponent,
+    LaptopComponent,
+    WashingMachineComponent,
+    TelevisionComponent,
+    MobileComponent,
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
   ],
+
   providers: [],
   bootstrap: [AppComponent],
 })

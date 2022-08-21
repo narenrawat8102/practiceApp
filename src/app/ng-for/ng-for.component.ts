@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
+interface Users {
+  name: string;
+}
 @Component({
   selector: 'app-ng-for',
   templateUrl: './ng-for.component.html',
@@ -33,23 +36,28 @@ export class NgForComponent implements OnInit {
     },
   ];
 
-  users: any = [];
+  // Using ViewChild
+  @ViewChild('uname') inputName: ElementRef<HTMLInputElement> =
+    {} as ElementRef;
+
+  users: Users[] = [];
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onAddUser(uname: any) {
+  onAddUser(uname: string): void {
     this.users.push({
-      name: uname.value,
+      name: uname,
     });
+    this.inputName.nativeElement.value = ' ';
   }
 
-  onRemoveUser() {
+  onRemoveUser(): void {
     this.users.splice(this.users.length - 1);
   }
 
-  onRemoveItem(item: any) {
+  onRemoveItem(item: number): void {
     this.users.splice(item, 1);
   }
 }

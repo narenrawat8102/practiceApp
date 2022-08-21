@@ -1,5 +1,42 @@
-<div class="container py-4">
-  <!-- <app-home></app-home> -->
-  <!-- <app-switch-case></app-switch-case> -->
-  <app-ng-for></app-ng-for>
-</div>
+<!-- <div class="container py-4"> -->
+<!-- <app-switch-case></app-switch-case> -->
+<!-- <app-ng-for></app-ng-for> -->
+<!-- </div> -->
+<!-- </div> -->
+
+<br />
+
+<header>
+  <div class="container">
+    <nav>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLink="/"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/about"
+            >About Us</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/products"
+            >Products</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/contact"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<router-outlet></router-outlet>
