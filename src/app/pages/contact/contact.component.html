@@ -1,10 +1,47 @@
-<div class="container my-3" style="background-color: lightcoral; height: 300px">
-  <div class="row py-3">
-    <h3 class="text-center my-2">Contact Us</h3>
-    <p class="text-center my-2">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ad,
-      recusandae provident nemo voluptatem amet ex ratione repellendus saepe.
-      Quos ab qui nostrum. Sapiente nobis ex, nulla officiis veritatis fugiat.
-    </p>
+<div class="container my-3 py-3" style="background-color: lightcoral">
+  <h3 class="text-center my-2">Contact Us</h3>
+  <p class="text-center my-2">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ad,
+    recusandae provident nemo voluptatem amet ex ratione repellendus saepe. Quos
+    ab qui nostrum. Sapiente nobis ex, nulla officiis veritatis fugiat.
+  </p>
+
+  <!-- use of ng-content  -->
+  <div class="row">
+    <div class="col-lg-6">
+      <app-card>
+        <h5 class="card-title">Laptop</h5>
+        <a routerLink="laptop" class="btn btn-success"
+          >Know More About Laptop</a
+        >
+      </app-card>
+    </div>
+
+    <div class="col-lg-6">
+      <app-card>
+        <h5 class="card-title">Mobile</h5>
+        <a routerLink="mobile" class="btn btn-success"
+          >Know More About Mobile</a
+        >
+      </app-card>
+    </div>
+
+    <div class="col-lg-6">
+      <app-card>
+        <h5 class="card-title">Television</h5>
+        <a routerLink="television" class="btn btn-success"
+          >Know More About Television</a
+        >
+      </app-card>
+    </div>
+
+    <div class="col-lg-6">
+      <app-card>
+        <h5 class="card-title">Washing Machine</h5>
+        <a routerLink="washing-machine" class="btn btn-success"
+          >Know More About Washing Machine</a
+        >
+      </app-card>
+    </div>
   </div>
 </div>

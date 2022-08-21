@@ -23,6 +23,8 @@ import { LaptopComponent } from './pages/products/laptop/laptop.component';
 import { WashingMachineComponent } from './pages/products/washing-machine/washing-machine.component';
 import { TelevisionComponent } from './pages/products/television/television.component';
 import { MobileComponent } from './pages/products/mobile/mobile.component';
+import { CardComponent } from './card/card.component';
+import { ParentComponent } from './parent/parent.component';
 
 // Routing
 const appRoutes: Routes = [
@@ -42,6 +44,7 @@ const appRoutes: Routes = [
     ],
   },
   { path: 'contact', component: ContactComponent },
+  { path: 'buy-products', component: ParentComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -60,6 +63,8 @@ const appRoutes: Routes = [
     WashingMachineComponent,
     TelevisionComponent,
     MobileComponent,
+    CardComponent,
+    ParentComponent,
   ],
 
   imports: [

@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Users {
   name: string;
@@ -42,7 +43,7 @@ export class NgForComponent implements OnInit {
 
   users: Users[] = [];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -51,6 +52,11 @@ export class NgForComponent implements OnInit {
       name: uname,
     });
     this.inputName.nativeElement.value = ' ';
+
+    // To navigate on the other page
+    if (this.users.length > 3) {
+      this.router.navigate(['products']);
+    }
   }
 
   onRemoveUser(): void {
