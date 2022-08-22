@@ -6,20 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.css'],
 })
 export class ParentComponent implements OnInit {
+  proSelected: boolean = false;
+  productName: string = '';
+
   productAdded: any;
-  productSelected: boolean = false;
-  product: string = '';
 
   constructor() {}
 
   ngOnInit(): void {}
 
   onSelectProduct(pro: string) {
-    this.productSelected = true;
-    this.product = pro;
+    this.proSelected = true;
+    this.productName = pro;
   }
 
-  onCardAdded() {
-    this.productAdded = this.product;
+  onAddedProductInCart(event: any) {
+    this.productAdded = event;
   }
 }

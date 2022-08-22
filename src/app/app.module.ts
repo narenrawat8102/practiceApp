@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Components
@@ -25,6 +26,19 @@ import { TelevisionComponent } from './pages/products/television/television.comp
 import { MobileComponent } from './pages/products/mobile/mobile.component';
 import { CardComponent } from './card/card.component';
 import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { Card2Component } from './card2/card2.component';
+import { Card1Component } from './card1/card1.component';
+
+// Suject & Subject Components
+import { SubjectComponent } from './subject/subject.component';
+import { Comp1Component } from './subjectComponents/comp1/comp1.component';
+import { Comp2Component } from './subjectComponents/comp2/comp2.component';
+import { Comp3Component } from './subjectComponents/comp3/comp3.component';
+import { Comp4Component } from './subjectComponents/comp4/comp4.component';
+
+// Services
+import { MessageService } from './uxServices/message.service';
 
 // Routing
 const appRoutes: Routes = [
@@ -45,6 +59,7 @@ const appRoutes: Routes = [
   },
   { path: 'contact', component: ContactComponent },
   { path: 'buy-products', component: ParentComponent },
+  { path: 'subject', component: SubjectComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -65,17 +80,26 @@ const appRoutes: Routes = [
     MobileComponent,
     CardComponent,
     ParentComponent,
+    ChildComponent,
+    Card2Component,
+    Card1Component,
+    SubjectComponent,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    Comp4Component,
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
   ],
 
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

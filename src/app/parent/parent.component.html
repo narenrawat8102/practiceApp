@@ -8,8 +8,8 @@
       class="alert alert-light border d-flex align-items-center"
       *ngIf="productAdded"
     >
-      <span class="text-success">{{ productAdded }}</span
-      >&nbsp; is Selected and Added in Cart
+      <span class="text-success">{{ productAdded }}</span>
+      &nbsp; is Selected and Added in Cart
       <button class="btn btn-success ms-auto">Checkout</button>
     </div>
 
@@ -81,13 +81,11 @@
         </div>
       </div>
 
-      <div class="col-lg-12 bg-success text-white text-center py-4">
-        <h2 *ngIf="!productSelected">Please Select Any Product</h2>
-        <h2 *ngIf="productSelected">{{ product }} is Selected</h2>
-        <button class="btn btn-secondary" (click)="onCardAdded()">
-          Add to Cart
-        </button>
-      </div>
+      <app-child
+        [productSelected]="proSelected"
+        [product]="productName"
+        (productAdded)="onAddedProductInCart($event)"
+      ></app-child>
     </div>
   </div>
 </div>

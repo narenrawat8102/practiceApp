@@ -8,7 +8,7 @@
 
   <!-- use of ng-content  -->
   <div class="row">
-    <div class="col-lg-6">
+    <!-- <div class="col-lg-6">
       <app-card>
         <h5 class="card-title">Laptop</h5>
         <a routerLink="laptop" class="btn btn-success"
@@ -42,6 +42,29 @@
           >Know More About Washing Machine</a
         >
       </app-card>
+    </div> -->
+
+    <!-- Components to use Service -->
+    <!-- Component Card1  -->
+    <div class="col-lg-6">
+      <app-card1></app-card1>
+    </div>
+
+    <!-- Component Card2  -->
+    <div class="col-lg-6">
+      <app-card2></app-card2>
+    </div>
+
+    <!-- Div to show products from Service -->
+    <div class="col-lg-12">
+      <div class="card text-center p-4">
+        <p class="my-1" *ngFor="let user of allUsers">
+          User Name:
+          <strong class="text-success">{{ user.name }}</strong> &nbsp; User ID:
+          <strong class="text-success">{{ user.id }}</strong> &nbsp; User Email:
+          <strong class="text-success">{{ user.email }}</strong>
+        </p>
+      </div>
     </div>
   </div>
 </div>
