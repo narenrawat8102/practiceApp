@@ -1,0 +1,11 @@
+<div class="text-white">
+  <h3 class="my-2">About Us</h3>
+  <p>{{ value | uppercase }}</p>
+  <p>{{ value | uxpipe }}</p>
+  <p>{{ date | date: "medium" }}</p>
+  <p>{{ date | date: "fullDate" | uppercase }}</p>
+
+  <ul class="list-unstyled">
+    <li *ngFor="let name of namesArr">{{ name | uxpipe }}</li>
+  </ul>
+</div>

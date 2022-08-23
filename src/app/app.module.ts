@@ -36,14 +36,20 @@ import { Comp1Component } from './subjectComponents/comp1/comp1.component';
 import { Comp2Component } from './subjectComponents/comp2/comp2.component';
 import { Comp3Component } from './subjectComponents/comp3/comp3.component';
 import { Comp4Component } from './subjectComponents/comp4/comp4.component';
+import { ViewChildComponent } from './subjectComponents/view-child/view-child.component';
 
 // Services
 import { MessageService } from './uxServices/message.service';
+import { TestDirectiveDirective } from './directives/test-directive.directive';
+import { PipeComponent } from './pipe/pipe.component';
+
+// Pipes
+import { UxPipe } from './appPipes/ux.pipe';
 
 // Routing
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
   // Nested Routing of Products Page
@@ -88,6 +94,10 @@ const appRoutes: Routes = [
     Comp2Component,
     Comp3Component,
     Comp4Component,
+    ViewChildComponent,
+    TestDirectiveDirective,
+    PipeComponent,
+    UxPipe,
   ],
 
   imports: [
