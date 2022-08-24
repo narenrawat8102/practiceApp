@@ -5,7 +5,72 @@
   <p>{{ date | date: "medium" }}</p>
   <p>{{ date | date: "fullDate" | uppercase }}</p>
 
+  <!-- List of names -->
   <ul class="list-unstyled">
     <li *ngFor="let name of namesArr">{{ name | uxpipe }}</li>
   </ul>
+</div>
+
+<!-- Table & Input Section  -->
+<div class="row justify-content-center bg-primary">
+  <!-- Add product Input & Button -->
+  <div class="col-lg-8 bg-light px-0 my-3">
+    <form class="row justify-content-center py-3">
+      <div class="col-auto">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Add Product"
+          #add
+        />
+      </div>
+
+      <div class="col-auto">
+        <button
+          type="submit"
+          class="btn btn-success"
+          (click)="onAddProduct(add)"
+        >
+          Add product
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Search product by Name Input  -->
+  <div class="col-lg-8 bg-light px-0 my-3">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        id="search"
+        placeholder="Search Product by Name"
+        [(ngModel)]="nameSearch"
+      />
+    </div>
+  </div>
+
+  <!-- Table of products  -->
+  <div class="col-lg-8 bg-light px-0 my-3">
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Availability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productsArr | filter: nameSearch">
+          <th scope="row">{{ product.snum }}</th>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+          <td>
+            <span class="badge bg-success">{{ product.availability }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

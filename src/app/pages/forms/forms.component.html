@@ -1,0 +1,107 @@
+<div class="container my-3 py-3" style="background-color: lightcoral">
+  <h1 class="text-center text-success my-2">Forms</h1>
+  <p class="text-center my-2 mx-4">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ad,
+    recusandae provident nemo voluptatem amet ex ratione repellendus saepe. Quos
+    ab qui nostrum. Sapiente nobis ex, nulla officiis veritatis fugiat.
+  </p>
+
+  <!-- Template Driven Form  -->
+  <div class="row justify-content-center">
+    <div class="col-lg-6 border rounded shadow bg-light m-3">
+      <!-- Form  -->
+      <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+        <!-- Username  -->
+        <div class="col-md-6 my-3">
+          <label for="username" class="form-label">User Name*</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Username"
+            name="username"
+            [(ngModel)]="username"
+            required
+          />
+          <small *ngIf="username">Your username is {{ username }}</small>
+        </div>
+
+        <!-- Email  -->
+        <div class="col-md-6 my-3">
+          <label for="email" class="form-label">Email*</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Enter Email"
+            name="email"
+            ngModel
+            required
+            email
+            #email="ngModel"
+          />
+          <small class="text-danger" *ngIf="!email.valid && email.touched"
+            >Please enter valid email</small
+          >
+        </div>
+
+        <!-- Select Course  -->
+        <div class="col-md-6 my-3">
+          <label for="inputState" class="form-label">Select Course</label>
+          <select
+            id="inputState"
+            class="form-select"
+            name="course"
+            [(ngModel)]="defaultCourse"
+          >
+            <option value="HTML">HTML</option>
+            <option value="Angular">Angular</option>
+            <option value="JavaScript">JavaScript</option>
+          </select>
+        </div>
+
+        <!-- Radio Button for Gender  -->
+        <div class="form-check" *ngFor="let gender of genders">
+          <input
+            type="radio"
+            id="{{ gender.id }}"
+            class="form-check-input"
+            name="gender"
+            [(ngModel)]="defaultGender"
+            value="{{ gender.value }}"
+          />
+          <label class="form-check-label" for="gender">
+            {{ gender.value }}
+          </label>
+        </div>
+
+        <!-- Button  -->
+        <div class="col-12 my-3">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="!myForm.valid"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row justify-content-center" *ngIf="submitted">
+    <div class="col-lg-6 border rounded shadow bg-light m-3">
+      <h2 class="text-primary text-center my-3">Form Data</h2>
+      <p>
+        Username: <strong class="text-success">{{ formData.username }}</strong>
+      </p>
+      <p>
+        Email: <strong class="text-success">{{ formData.email }}</strong>
+      </p>
+      <p>
+        Course: <strong class="text-success">{{ formData.course }}</strong>
+      </p>
+      <p>
+        Gender: <strong class="text-success">{{ formData.gender }}</strong>
+      </p>
+    </div>
+  </div>
+</div>

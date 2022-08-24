@@ -1,36 +1,41 @@
+// Modules
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Components
 import { AppComponent } from './app.component';
+import { PipeComponent } from './pipe/pipe.component';
 import { LoginComponent } from './login/login.component';
 import { NgForComponent } from './ng-for/ng-for.component';
 import { SwitchCaseComponent } from './switch-case/switch-case.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
+
+import { CardComponent } from './card/card.component';
+import { Card1Component } from './card1/card1.component';
+import { Card2Component } from './card2/card2.component';
 
 // Pages Components
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { FormsComponent } from './pages/forms/forms.component';
 
 // Products Components
 import { LaptopComponent } from './pages/products/laptop/laptop.component';
-import { WashingMachineComponent } from './pages/products/washing-machine/washing-machine.component';
-import { TelevisionComponent } from './pages/products/television/television.component';
 import { MobileComponent } from './pages/products/mobile/mobile.component';
-import { CardComponent } from './card/card.component';
-import { ParentComponent } from './parent/parent.component';
-import { ChildComponent } from './child/child.component';
-import { Card2Component } from './card2/card2.component';
-import { Card1Component } from './card1/card1.component';
+import { TelevisionComponent } from './pages/products/television/television.component';
+import { WashingMachineComponent } from './pages/products/washing-machine/washing-machine.component';
 
-// Suject & Subject Components
+// Subject & Subject's Components
 import { SubjectComponent } from './subject/subject.component';
 import { Comp1Component } from './subjectComponents/comp1/comp1.component';
 import { Comp2Component } from './subjectComponents/comp2/comp2.component';
@@ -40,11 +45,13 @@ import { ViewChildComponent } from './subjectComponents/view-child/view-child.co
 
 // Services
 import { MessageService } from './uxServices/message.service';
+
+// Directives
 import { TestDirectiveDirective } from './directives/test-directive.directive';
-import { PipeComponent } from './pipe/pipe.component';
 
 // Pipes
 import { UxPipe } from './appPipes/ux.pipe';
+import { FilterPipe } from './appPipes/filter.pipe';
 
 // Routing
 const appRoutes: Routes = [
@@ -66,6 +73,7 @@ const appRoutes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'buy-products', component: ParentComponent },
   { path: 'subject', component: SubjectComponent },
+  { path: 'forms', component: FormsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -98,6 +106,8 @@ const appRoutes: Routes = [
     TestDirectiveDirective,
     PipeComponent,
     UxPipe,
+    FilterPipe,
+    FormsComponent,
   ],
 
   imports: [
