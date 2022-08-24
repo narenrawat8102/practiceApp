@@ -1,6 +1,6 @@
 // Modules
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +28,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FormsComponent } from './pages/forms/forms.component';
+import { ReactiveFormsComponent } from './pages/reactive-forms/reactive-forms.component';
 
 // Products Components
 import { LaptopComponent } from './pages/products/laptop/laptop.component';
@@ -74,6 +75,7 @@ const appRoutes: Routes = [
   { path: 'buy-products', component: ParentComponent },
   { path: 'subject', component: SubjectComponent },
   { path: 'forms', component: FormsComponent },
+  { path: 'reactiveForms', component: ReactiveFormsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -108,12 +110,14 @@ const appRoutes: Routes = [
     UxPipe,
     FilterPipe,
     FormsComponent,
+    ReactiveFormsComponent,
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),

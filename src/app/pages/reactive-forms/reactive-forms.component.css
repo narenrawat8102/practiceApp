@@ -1,0 +1,14 @@
+input.ng-invalid.ng-touched,
+select.ng-invalid {
+  border: 1px solid red;
+  box-shadow: 0 0 13px inset rgba(255, 0, 0, 0.09);
+}
+
+.btn-add span {
+  font-size: 33px;
+  line-height: 12px;
+  display: inline-block;
+  position: relative;
+  top: 6px;
+  margin-right: 3px;
+}
