@@ -1,4 +1,4 @@
-<div class="container my-3 py-3" style="background-color: lightcoral">
+<div class="container my-3 py-3" style="background-color: lightgray">
   <h1 class="text-center text-success my-2">Reactive Forms</h1>
   <p class="text-center my-2 mx-4">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ad,
@@ -22,6 +22,14 @@
               placeholder="Enter Username"
               formControlName="username"
             />
+            <small
+              *ngIf="
+                !myReactiveForm.get('userDetails.username').valid &&
+                myReactiveForm.get('userDetails.username').touched
+              "
+              class="text-danger"
+              >Username is not valid</small
+            >
           </div>
 
           <!-- Email  -->

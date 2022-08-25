@@ -1,10 +1,11 @@
 // Modules
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
+// import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+// import { ProductModule } from './pages/products/product.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Components
@@ -25,16 +26,9 @@ import { Card2Component } from './card2/card2.component';
 // Pages Components
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
-import { ProductsComponent } from './pages/products/products.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FormsComponent } from './pages/forms/forms.component';
 import { ReactiveFormsComponent } from './pages/reactive-forms/reactive-forms.component';
-
-// Products Components
-import { LaptopComponent } from './pages/products/laptop/laptop.component';
-import { MobileComponent } from './pages/products/mobile/mobile.component';
-import { TelevisionComponent } from './pages/products/television/television.component';
-import { WashingMachineComponent } from './pages/products/washing-machine/washing-machine.component';
 
 // Subject & Subject's Components
 import { SubjectComponent } from './subject/subject.component';
@@ -54,31 +48,6 @@ import { TestDirectiveDirective } from './directives/test-directive.directive';
 import { UxPipe } from './appPipes/ux.pipe';
 import { FilterPipe } from './appPipes/filter.pipe';
 
-// Routing
-const appRoutes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'about', component: AboutComponent },
-  // Nested Routing of Products Page
-  {
-    path: 'products',
-    children: [
-      { path: '', component: ProductsComponent },
-      { path: 'laptop', component: LaptopComponent },
-      { path: 'mobile', component: MobileComponent },
-      { path: 'television', component: TelevisionComponent },
-      { path: 'washing-machine', component: WashingMachineComponent },
-    ],
-  },
-  { path: 'contact', component: ContactComponent },
-  { path: 'buy-products', component: ParentComponent },
-  { path: 'subject', component: SubjectComponent },
-  { path: 'forms', component: FormsComponent },
-  { path: 'reactiveForms', component: ReactiveFormsComponent },
-  { path: '**', component: PageNotFoundComponent },
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,14 +55,9 @@ const appRoutes: Routes = [
     NgForComponent,
     HomeComponent,
     AboutComponent,
-    ProductsComponent,
     ContactComponent,
     LoginComponent,
     PageNotFoundComponent,
-    LaptopComponent,
-    WashingMachineComponent,
-    TelevisionComponent,
-    MobileComponent,
     CardComponent,
     ParentComponent,
     ChildComponent,
@@ -120,10 +84,14 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes),
+    // ProductModule,
   ],
 
   providers: [MessageService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor() {
+    console.log('App Module Loaded');
+  }
+}
