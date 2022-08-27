@@ -12,7 +12,7 @@ import { ParentComponent } from 'src/app/parent/parent.component';
 import { SubjectComponent } from 'src/app/subject/subject.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  // { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },

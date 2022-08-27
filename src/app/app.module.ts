@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-// import { ProductModule } from './pages/products/product.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LangTranslateModule } from './lang-translate.module';
 
 // Components
 import { AppComponent } from './app.component';
@@ -22,6 +22,9 @@ import { ParentComponent } from './parent/parent.component';
 import { CardComponent } from './card/card.component';
 import { Card1Component } from './card1/card1.component';
 import { Card2Component } from './card2/card2.component';
+
+// Layout Component
+import { HeaderComponent } from './layout/header/header.component';
 
 // Pages Components
 import { HomeComponent } from './pages/home/home.component';
@@ -40,6 +43,7 @@ import { ViewChildComponent } from './subjectComponents/view-child/view-child.co
 
 // Services
 import { MessageService } from './uxServices/message.service';
+import { HomeService } from './uxServices/home.service';
 
 // Directives
 import { TestDirectiveDirective } from './directives/test-directive.directive';
@@ -75,6 +79,7 @@ import { FilterPipe } from './appPipes/filter.pipe';
     FilterPipe,
     FormsComponent,
     ReactiveFormsComponent,
+    HeaderComponent,
   ],
 
   imports: [
@@ -84,14 +89,10 @@ import { FilterPipe } from './appPipes/filter.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    // ProductModule,
+    LangTranslateModule,
   ],
 
-  providers: [MessageService],
+  providers: [MessageService, HomeService],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-  constructor() {
-    console.log('App Module Loaded');
-  }
-}
+export class AppModule {}

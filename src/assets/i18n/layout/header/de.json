@@ -1,0 +1,20 @@
+{
+  "header": {
+    "item1": "Heim",
+    "item2": "Uber Uns",
+    "item3": "Produkte",
+    "item4": "Kontaktiere Uns",
+    "item5": "Produkte Kaufen",
+    "item6": "Thema",
+    "item7": "Formen",
+    "item8": "Reaktive Formen"
+  },
+
+  "home": {
+    "title": "Heim",
+    "p1": "Maruti Engineers ist ein führender Hersteller von Montagestrukturen für Aluminium-Solarmodule. Wir bieten hochwertige Solar-Montagestrukturen, die in Standard-Wohn- und Gewerbeprojekten eingesetzt werden können.",
+    "p2": "Mit dem Ziel, führend auf dem Markt zu sein, bedienen wir unsere angesehenen Kunden durch die Herstellung und Lieferung von Solarmodul-Montagestrukturen gemäß ihren spezifischen Anforderungen. Unsere kundenspezifischen Solarstrukturen werden häufig in Solaranlagen zur Unterstützung von PV-Modulen eingesetzt.",
+    "p3": "Wir verfügen über eine hohe Struktur- und Strukturkomponentenfertigungskapazität. Wir haben auch einen hauseigenen Werkzeugbau, der auf verschiedene Projekte mit unterschiedlichen Querschnittsanforderungen ausgerichtet ist. Die von uns angebotene Solarmodul-Montagestruktur ist hochoptimiert und kostengünstig.",
+    "btn": "Mehr wissen"
+  }
+}

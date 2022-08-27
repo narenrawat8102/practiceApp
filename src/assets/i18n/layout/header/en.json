@@ -1,0 +1,20 @@
+{
+  "header": {
+    "item1": "Home",
+    "item2": "About Us",
+    "item3": "Products",
+    "item4": "Contact Us",
+    "item5": "Buy Products",
+    "item6": "Subject",
+    "item7": "Forms",
+    "item8": "Reactive Forms"
+  },
+
+  "home": {
+    "title": "Home",
+    "p1": "Maruti Engineers, is a leading Aluminium Solar Module Mounting Structure Manufacturer. We provide high-quality Solar Mounting Sructures which can be applied in standard residential and commercial projects.",
+    "p2": "With an aim to be a leader in the market, we are serving our respected clients by manufacturing and supplying Solar Module Mounting Structure as per their specific requirements. Our customized Solar Structures are widely used in solar plants to support solar PV panels.",
+    "p3": "We have a high structure and structural component manufacturing capacity. We also have an in-house tool room that caters to different projects with various sectional requirements. The Solar Module Mounting Structure offered by us is highly optimized and cost effective.",
+    "btn": "Know More"
+  }
+}
